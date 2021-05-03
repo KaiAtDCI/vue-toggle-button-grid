@@ -1,24 +1,25 @@
 <template>
   <div class="toggle-button-grid">
-    <ToggleButtonGrid
-        v-for="(ToggleButtonGridNumber, index) in numberOfToggleButtonColumns"
-        :key="ToggleButtonGridNumber"
+    <ToggleButtonColumn
+        v-for="(toggleButtonColumnNumber, index) in numberOfToggleButtonColumns"
+        :key="toggleButtonColumnNumber"
         :numberOfToggleButtons="numberOfToggleButtonRows"
+        :class="{highlighted: highlightedColumnNumber === index}"
         @onChange="onChange($event, index)"
     >
-    </ToggleButtonGrid>
+    </ToggleButtonColumn>
   </div>
 </template>
 
 <script>
-  import ToggleButtonGrid from "./ToggleButtonColumn";
+  import ToggleButtonColumn from "./ToggleButtonColumn";
 
   export default {
 
-    name: 'ToggleButtonPane',
+    name: 'ToggleButtonGrid',
 
     components: {
-      ToggleButtonGrid
+      ToggleButtonColumn
     },
 
     props: {
@@ -29,6 +30,10 @@
       numberOfToggleButtonRows: {
         type: Number,
         default: 3,
+      },
+      highlightedColumnNumber: {
+        type: Number,
+        default: 0,
       }
     },
 
@@ -59,4 +64,9 @@
     gap: .125em;
     color: black;
   }
+  .highlighted {
+    box-shadow: 0 0 2px 2px red;
+    background-color: red;
+  }
+
 </style>

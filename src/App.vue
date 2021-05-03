@@ -1,5 +1,5 @@
 <template>
-  <ToggleButtonMatrix
+  <ToggleButtonGrid
       :numberOfToggleButtonColumns="8"
       :numberOfToggleButtonRows="3"
       @onChange="onChange($event)"
@@ -8,12 +8,12 @@
 
 <script>
 
-  import ToggleButtonMatrix from './components/ToggleButtonGrid.vue';
+  import ToggleButtonGrid from './components/ToggleButtonGrid.vue';
 
   export default {
     name: 'App',
     components: {
-      ToggleButtonMatrix
+      ToggleButtonGrid
     },
     methods: {
       onChange(event) {
