@@ -37,7 +37,7 @@
 
     methods: {
       onChange(event, index) {
-        console.log(`ToggleButtonStack| received onChange(${event}, ${index})`);
+        // console.log(`ToggleButtonColumn| received onChange(${event}, ${index})`);
         this.value.splice(index,1, event);
         this.emitValue();
       },

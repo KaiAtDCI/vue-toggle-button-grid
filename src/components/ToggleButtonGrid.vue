@@ -65,8 +65,7 @@
     color: black;
   }
   .highlighted {
-    box-shadow: 0 0 2px 2px red;
-    background-color: red;
+    z-index: 10;
+    box-shadow: 0 0 0 2px lightsteelblue;
   }
-
 </style>
